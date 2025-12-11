@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rabbiya Younas | Personal Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --bg: #f9fafb;
+      --text: #111827;
+      --muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      background: #0f172a;
+      color: #f9fafb;
+      padding: 2.5rem 1rem 1.5rem;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .top-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      margin: 0.25rem 0 0;
+      color: #e5e7eb;
+      font-size: 0.95rem;
+    }
+
+    nav {
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    nav a:hover {
+      background: rgba(15, 23, 42, 0.8);
+      border-color: var(--accent);
+    }
+
+    .social {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+    }
+
+    .social a {
+      color: #bfdbfe;
+      text-decoration: none;
+    }
+
+    .social a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 2rem 1rem 3rem;
+    }
+
+    section {
+      max-width: 950px;
+      margin: 0 auto 2.5rem;
+      background: white;
+      border-radius: 0.75rem;
+      padding: 1.5rem 1.7rem;
+      box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e5e7eb;
+    }
+
+    section h2 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 0.4rem;
+    }
+
+    .tagline {
+      font-style: italic;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+      margin: 0.3rem 0 0.3rem;
+    }
+
+    li + li {
+      margin-top: 0.3rem;
+    }
+
+    .item-title {
+      font-weight: 600;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      border-top: 1px solid #e5e7eb;
+      padding: 1rem;
+      font-size: 0.8rem;
+      text-align: center;
+      color: var(--muted);
+      background: white;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 1.8rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="top-row">
+      <div>
+        <h1>Rabbiya Younas</h1>
+        <p class="subtitle">
+          Researcher in Multi-Agent Reinforcement Learning · MS in Information & Communication Engineering
+        </p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#research">Research / Projects</a>
+      <a href="#publications">Publications</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="social">
+      <!-- Replace with your real profile links -->
+      <a href="mailto:younis.rabbiya@gmail.com">Email</a>
+      <span>·</span>
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+      <span>·</span>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <span>·</span>
+      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+      <span>·</span>
+      <a href="cv.pdf" target="_blank">CV (PDF)</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ABOUT / BIO -->
+  <section id="about">
+    <h2>About</h2>
+    <p class="tagline">
+      Researcher with expertise in Multi-Agent Reinforcement Learning, AI, and data-driven modelling.
+    </p>
+    <p>
+      I am an experienced researcher with a strong background in Multi-Agent Reinforcement Learning
+      and Artificial Intelligence, holding an MS in Information and Communication Engineering from
+      Yeungnam University, South Korea (GPA 4.12, 92%). My work spans hybrid Transformer-based
+      forecasting for cryptocurrencies, state-fusion architectures for MARL, and applied machine
+      learning for real-world problems in NLP, time-series analysis, and computer vision. I have
+      authored multiple conference papers, filed two patents, and am actively working on several
+      journal publications.
+    </p>
+  </section>
+
+  <!-- RESEARCH / PROJECTS -->
+  <section id="research">
+    <h2>Research & Projects</h2>
+    <p>
+      My research focuses on reinforcement learning, deep learning, and data-driven forecasting,
+      with applications in finance, autonomous systems, and intelligent decision-making.
+    </p>
+
+    <ul>
+      <li>
+        <span class="item-title">Hybrid Transformer-Based Cryptocurrency Forecasting</span><br>
+        <span class="muted">
+          Developed a predictive Transformer-based hybrid methodology to investigate the predictability
+          of ten cryptocurrencies at hourly, daily, and yearly frequencies. This work led to a patent
+          on a hybrid attention-correlation-based forecasting framework.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">State-Fusion Network for Multi-Agent Reinforcement Learning</span><br>
+        <span class="muted">
+          Introduced a novel state-fusion network as an alternative to traditional mixing networks
+          with self-attention, improving coordination among agents in MARL settings and resulting in
+          a dedicated patent and peer-reviewed publications.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">NLP and Sentiment Analysis</span><br>
+        <span class="muted">
+          Extensive work in text classification, sentiment analysis, named entity recognition, and
+          machine translation. Co-authored “Ac-Net: A Deep Learning Architecture for Enhanced
+          Sentiment Classification of Shopify App Reviews”.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">Deep Learning for Autonomous Driving Perception</span><br>
+        <span class="muted">
+          Applied convolutional neural networks (CNNs) to noisy camera data to improve obstacle
+          detection for autonomous vehicles, focusing on robust perception in challenging conditions.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <h2>Selected Publications & Patents</h2>
+    <p class="muted">
+      A subset of my work is listed below. More details and a full list are available on my CV and
+      Google Scholar profile.
+    </p>
+
+    <ul>
+      <!-- Accepted journal -->
+      <li>
+        <span class="item-title">
+          SA-MARL: Novel Self-Attention Based Multi-Agent Reinforcement Learning with Stochastic Gradient Descent
+        </span><br>
+        <span class="muted">
+          IEEE Access (special invitation), 2025.
+        </span>
+      </li>
+
+      <!-- Conference papers -->
+      <li>
+        <span class="item-title">Novel Enhanced Mixing Network for MARL</span><br>
+        <span class="muted">
+          IEMEK Conference, 2023.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">
+          Analyzing Hazards of Tourism: Predicting the Impact of Tourism on Carbon Dioxide
+        </span><br>
+        <span class="muted">
+          IEMEK Conference, 2023.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">Self-Attention Based Mixing Network for MARL</span><br>
+        <span class="muted">
+          IEMEK Conference, 2023.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">Optimization-Based MARL for Action Selection of Agent</span><br>
+        <span class="muted">
+          IEMEK Conference, 2022.
+        </span>
+      </li>
+
+      <!-- Submitted / under review (optional short list) -->
+      <li>
+        <span class="item-title">
+          Ac-Net: A Deep Learning Architecture for Enhanced Sentiment Classification of Shopify App Reviews
+        </span><br>
+        <span class="muted">
+          Submitted to Journal of Big Data.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">
+          Crypto Foretell: A Novel Hybrid Attention-Correlation Based Forecasting Approach for Cryptocurrency
+        </span><br>
+        <span class="muted">
+          Submitted to Journal of Big Data.
+        </span>
+      </li>
+
+      <!-- Patents -->
+      <li>
+        <span class="item-title">
+          A Novel Hybrid Attention-Correlation Based Forecasting Approach for Cryptocurrency
+        </span><br>
+        <span class="muted">
+          Patent, Serial No. 2023000212, Dooho Patent Firm.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">
+          Novel Self-Attention Based Multi-Agent Reinforcement Learning with Stochastic Gradient Descent
+        </span><br>
+        <span class="muted">
+          Patent, Serial No. 2023000203, Dooho Patent Firm.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <p class="muted">
+      I have taught undergraduate courses with a balance of theory and practical skills.
+    </p>
+
+    <ul>
+      <li>
+        <span class="item-title">Visiting Lecturer, NUML University, Pakistan</span><br>
+        <span class="muted">
+          Sep 2024 – Dec 2024 &mdash; Taught <em>Introduction to IT Skills</em> and
+          <em>Software Engineering</em>, focusing on core concepts and hands-on learning.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service">
+    <h2>Service & Professional Activities</h2>
+    <ul>
+      <li>
+        <span class="item-title">Research Assistant, Data Science Lab, Yeungnam University</span><br>
+        <span class="muted">
+          Mar 2021 – Feb 2024 &mdash; Contributed to lab research output in MARL, deep learning,
+          and data-driven modelling, including patents and multiple conference papers.
+        </span>
+      </li>
+      <li>
+        <span class="item-title">Collaboration & Mentoring</span><br>
+        <span class="muted">
+          Collaborated with peers on interdisciplinary AI projects and supported junior students
+          in understanding reinforcement learning, Python programming, and research workflows.
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>
+      <strong>Email (primary):</strong> younis.rabbiya@gmail.com<br>
+      <strong>Email (academic):</strong> younas.rabbiya@yu.ac.kr<br>
+      <strong>Recent roles:</strong> Research Assistant, Data Science Lab, Yeungnam University, South Korea;
+      Visiting Lecturer, NUML University, Pakistan.
+    </p>
+    <p class="muted">
+      For research collaborations, please contact me via email. I am particularly interested in
+      projects involving reinforcement learning, deep learning, and applied AI.
+    </p>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> Rabbiya Younas. All rights reserved.
+</footer>
+
+<script>
+  // Auto-update year in footer
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
