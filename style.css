@@ -1,0 +1,615 @@
+/* =========================================================
+   Shared Site Styles (single file for ALL pages)
+   Portfolio theme: soft pink grid + glass cards
+   ========================================================= */
+
+/* ---------- Theme tokens ---------- */
+:root{
+  --bg:#f6dfe1;            /* soft pink */
+  --ink:#121212;           /* near-black */
+  --muted:#2a2a2a;
+  --panel:#f3d9dc;
+  --panel2:#f7e3e6;
+  --line:rgba(0,0,0,.22);
+  --border:rgba(0,0,0,.55);
+  --shadow:0 18px 50px rgba(0,0,0,.08);
+  --serif: ui-serif, Georgia, "Times New Roman", Times, serif;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", sans-serif;
+}
+
+/* ---------- Base / reset ---------- */
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  color:var(--ink);
+  background:var(--bg);
+  font-family:var(--sans);
+}
+
+/* Make images behave nicely */
+img{ max-width:100%; display:block; }
+
+/* Links default */
+a{ color:inherit; }
+
+/* ---------- Background grid ---------- */
+.bgGrid{
+  min-height:100%;
+  background:
+    linear-gradient(to right, rgba(0,0,0,.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,.12) 1px, transparent 1px);
+  background-size: 160px 160px;
+  background-position: 0 0;
+}
+
+/* ---------- Page wrapper ---------- */
+.wrap{
+  max-width: 1320px; /* inner pages */
+  margin: 0 auto;
+  padding: 28px 22px 40px;
+  position: relative;
+}
+
+/* Home page was narrower in your original file */
+.page-home .wrap{ max-width: 1180px; }
+
+/* ---------- Decorative pink blocks (used on most pages) ---------- */
+.pinkBlocks::before,
+.pinkBlocks::after{
+  content:"";
+  position:absolute;
+  background: rgba(235, 162, 170, .28);
+  z-index:0;
+  pointer-events:none;
+  border-radius: 0;
+}
+.pinkBlocks::before{
+  width: 220px; height: 420px;
+  left: 92px; top: 20px;
+}
+.pinkBlocks::after{
+  width: 170px; height: 280px;
+  left: 520px; top: 10px;
+  background: rgba(235, 162, 170, .22);
+}
+
+/* ---------- Header ---------- */
+header{
+  position: relative;
+  z-index: 1;
+  padding-top: 16px;
+  display:flex;
+  align-items:flex-start;
+  gap: 22px;
+}
+
+.profile{
+  width: 140px;
+  position: relative;
+  flex: 0 0 140px;
+}
+
+/* Some pages use .photo directly; some use .profile .photo */
+.photo,
+.profile .photo{
+  width: 128px;
+  height: 128px;
+  border: 4px solid rgba(255,255,255,.65);
+  background: #fff;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+.photo img,
+.profile .photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* Optional stamp (index page) */
+.profile .stamp{
+  position:absolute;
+  left: 86px;
+  top: -8px;
+  width: 80px;
+  height: 80px;
+  background: rgba(235, 162, 170, .55);
+  display:grid;
+  place-items:center;
+}
+.profile .stamp svg{
+  width: 70px;
+  height: 70px;
+  display:block;
+}
+
+.heroText{ flex:1; padding-top: 8px; }
+.name{
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: .2px;
+  line-height: .92;
+  font-size: clamp(44px, 6vw, 86px);
+  margin: 0;
+}
+.tagline{
+  margin-top: 14px;
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: .5px;
+  word-spacing: 2px;
+  color: rgba(0,0,0,.78);
+}
+
+/* ---------- Main layout ---------- */
+/* Default for inner pages: left navigation + right content */
+.main{
+  position: relative;
+  z-index: 1;
+  margin-top: 34px;
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap: 26px;
+  align-items:start;
+}
+
+/* Home page (3 columns). Add class="page-home" on <body> in index.html */
+.page-home .main{
+  grid-template-columns: 1.2fr 1fr 0.85fr;
+}
+
+/* ---------- Cards ---------- */
+.card{
+  background: rgba(255,255,255,.35);
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.article{ padding: 18px 18px 16px; }
+
+/* Headings inside cards */
+.article h3,
+.card h3,
+h3{
+  font-family: var(--serif);
+  margin: 8px 0 14px;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: .4px;
+}
+
+/* Paragraph defaults (home card text, etc.) */
+.article p{
+  margin: 0 0 16px;
+  color: rgba(0,0,0,.70);
+  font-size: 14.5px;
+  line-height: 1.55;
+  max-width: 42ch;
+}
+
+/* Home page used justified paragraphs */
+.page-home .article p{
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* ---------- Home-only blocks ---------- */
+.feature{
+  padding: 0;
+  overflow:hidden;
+  height: 280px;
+  display:block;
+}
+.feature img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.featureText{
+  padding: 22px 20px;
+  height: 280px;
+  background: rgba(255,255,255,.38);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.featureText h3{
+  font-family: var(--serif);
+  font-size: 22px;
+  margin: 0 0 14px;
+  line-height: 1.2;
+}
+.featureText ul{
+  margin: 0;
+  padding-left: 18px;
+  list-style-type: disc;
+}
+.featureText li{
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin-bottom: 10px;
+  color: rgba(0,0,0,.78);
+}
+.featureText strong{ font-weight: 800; }
+
+.phdHighlight{
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.55);
+  border-left: 4px solid rgba(0,0,0,.6);
+  font-size: 14.8px;
+  line-height: 1.55;
+  font-weight: 600;
+  color: rgba(0,0,0,.85);
+}
+
+.contactGrid{
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 28px;
+
+  padding: 10px 16px;
+  border: 1.5px solid rgba(0,0,0,.35);
+  background: rgba(255,255,255,.35);
+  box-shadow: var(--shadow);
+
+  font-size: 13.5px;
+  color: rgba(0,0,0,.8);
+}
+.contactGrid div{
+  display:flex;
+  align-items:center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.contactGrid strong{
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.85);
+}
+.contactGrid span{ font-size: 13.5px; }
+
+/* ---------- Left navigation buttons ---------- */
+.actions{
+  display:flex;
+  flex-direction:column;
+  gap: 12px;
+}
+
+.btn{
+  appearance:none;
+  border: 2px solid var(--border);
+  background: rgba(255,255,255,.36);
+  font-family: var(--sans);
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 14px 14px;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor:pointer;
+  width: 100%;
+  box-shadow: var(--shadow);
+
+  text-decoration: none;
+  color: var(--ink);
+  display:block;
+  text-align:center;
+  position: relative;
+}
+
+.btn:hover{ filter: brightness(0.98); }
+.btn:active{ transform: translateY(1px); }
+
+.btn.active{
+  border-style: dashed;
+  border-color: rgba(0,0,0,.9);
+  background: rgba(255,255,255,.55);
+}
+.btn.active::after{
+  content: "✓";
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: 900;
+  font-size: 16px;
+  opacity: .85;
+}
+
+/* ---------- Bottom CTA buttons ---------- */
+.bottom{
+  position: relative;
+  z-index: 1;
+  margin-top: 18px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.btnWide{
+  width: 100%;
+  padding: 16px 18px;
+  border: 2px solid var(--border);
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor:pointer;
+  box-shadow: var(--shadow);
+  font-size: 12px;
+  display:block;
+  text-align:center;
+  text-decoration:none;
+}
+.btnWide.light{
+  background: rgba(255,255,255,.36);
+  color: rgba(0,0,0,.85);
+}
+.btnWide.dark{
+  background: #151515;
+  color: rgba(255,255,255,.92);
+}
+
+/* ---------- Experience page ---------- */
+.role{
+  font-weight:700;
+  font-size:17px;
+  margin-bottom:4px;
+}
+.meta{
+  color:rgba(0,0,0,.7);
+  margin-bottom:10px;
+}
+.sectionTitle{
+  font-weight:800;
+  margin:14px 0 6px;
+  font-size:15px;
+}
+ul{
+  margin:0 0 10px;
+  padding-left:22px;
+  line-height:1.55;
+  color:rgba(0,0,0,.78);
+}
+.divider{
+  height:1px;
+  background:rgba(0,0,0,.18);
+  margin:14px 0;
+}
+
+/* ---------- Publications page ---------- */
+.pubCard p{ max-width:none; }
+
+.sectionTitle{
+  font-weight: 900;
+  margin: 2px 0 10px;
+  font-size: 16px;
+  letter-spacing: .2px;
+}
+.pubItem{ padding: 10px 0 12px; }
+.pubTitle{
+  font-weight: 900;
+  font-size: 15.5px;
+  line-height: 1.45;
+  margin: 0 0 6px;
+  color: rgba(0,0,0,.92);
+}
+.pubMeta{
+  margin: 0 0 6px;
+  color: rgba(0,0,0,.74);
+  line-height: 1.55;
+  font-size: 14.5px;
+}
+.pubMeta em{ font-style: italic; }
+.pubLinks{
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(0,0,0,.78);
+}
+.pubLinks a{
+  color: rgba(0,0,0,.88);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Patents page ---------- */
+.patCard p{ max-width:none; }
+.patBlock{ padding-top: 4px; }
+.patItem{ padding: 10px 0 14px; }
+.patTitle{
+  margin: 0 0 6px;
+  color: rgba(0,0,0,.92);
+  font-size: 16px;
+  line-height: 1.45;
+  font-weight: 800;
+}
+.patMeta{
+  margin: 0 0 10px;
+  color: rgba(0,0,0,.70);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.patLink{
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0;
+}
+.patLink a{
+  color: rgba(0,0,0,.82);
+  text-decoration: underline;
+  font-weight: 700;
+  word-break: break-word;
+}
+.patLink a:hover{ opacity: .9; }
+.patDivider{
+  height: 1px;
+  background: rgba(0,0,0,.18);
+  margin: 2px 0 6px;
+}
+
+/* ---------- Education page ---------- */
+.eduCard p{
+  max-width:none !important;
+  text-align:left !important;
+  text-justify:auto !important;
+}
+.eduBlock{ padding-top:4px; }
+.eduRow{
+  margin: 0 0 6px;
+  color: rgba(0,0,0,.90);
+  font-size: 16px;
+  line-height: 1.45;
+}
+.eduMeta{
+  margin: 0 0 12px;
+  color: rgba(0,0,0,.70);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.sep{ padding: 0 6px; }
+.nowrap{ white-space: nowrap; }
+.eduList{
+  margin: 0 0 18px;
+  padding-left: 22px;
+  color: rgba(0,0,0,.78);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.eduList li{ margin-bottom: 6px; }
+.eduDivider{
+  height: 1px;
+  background: rgba(0,0,0,.18);
+  margin: 14px 0 16px;
+}
+
+/* ---------- Research projects page ---------- */
+.projTitle{
+  margin: 0 0 10px;
+  font-size: 17px;
+  font-weight: 900;
+  color: rgba(0,0,0,.92);
+  line-height: 1.35;
+}
+.projList{
+  margin: 0 0 14px;
+  padding-left: 22px;
+  color: rgba(0,0,0,.78);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.projList li{ margin-bottom: 6px; }
+.projLink{
+  display:inline-block;
+  font-size: 14.5px;
+  font-weight: 800;
+  color: rgba(0,0,0,.82);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,.35);
+  padding-bottom: 2px;
+  word-break: break-word;
+}
+.projLink:hover{ border-bottom-color: rgba(0,0,0,.65); }
+
+/* ---------- Technical skills page ---------- */
+.gridWrap{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 6px;
+}
+.skillCard{
+  border: 2px solid rgba(0,0,0,.45);
+  background: rgba(255,255,255,.38);
+  box-shadow: 0 14px 40px rgba(0,0,0,.06);
+  padding: 14px 14px 12px;
+}
+.skillTitle{
+  font-family: var(--serif);
+  font-weight: 900;
+  letter-spacing: .2px;
+  margin: 0 0 10px;
+  font-size: 16px;
+  color: rgba(0,0,0,.92);
+}
+.pillRow{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pill{
+  border: 1.8px solid rgba(0,0,0,.45);
+  background: rgba(255,255,255,.45);
+  padding: 7px 10px;
+  font-size: 12.8px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  color: rgba(0,0,0,.82);
+  line-height: 1;
+}
+.langList{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(0,0,0,.78);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.langList li{ margin-bottom: 6px; }
+
+/* ---------- References page ---------- */
+.refGrid{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 14px;
+}
+.refCard{
+  border: 2px solid rgba(0,0,0,.45);
+  background: rgba(255,255,255,.4);
+  padding: 14px;
+  box-shadow: 0 14px 40px rgba(0,0,0,.06);
+}
+.refName{
+  font-family: var(--serif);
+  font-weight: 900;
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+.refRole{
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 6px;
+  color: rgba(0,0,0,.8);
+}
+.refMeta{
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0,0,0,.75);
+}
+.refMeta a{
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 980px){
+  .main{ grid-template-columns: 1fr; }
+  header{ align-items:center; }
+  .heroText{ padding-top:0; }
+  .profile{ flex:0 0 auto; width:auto; }
+  .feature{ height: 240px; }
+  .gridWrap{ grid-template-columns: 1fr; }
+  .refGrid{ grid-template-columns: 1fr; }
+  .nowrap{ white-space: normal; } /* allow wrap on small screens */
+  .contactGrid{ grid-template-columns: 1fr; gap: 10px; }
+}
