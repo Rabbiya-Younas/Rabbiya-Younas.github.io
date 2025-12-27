@@ -700,3 +700,75 @@ ul{
   .btn{ padding: 13px 12px; }
   .btnWide{ padding: 14px 14px; }
 }
+
+
+/* ===== Tooltip (Academic Highlight) ===== */
+
+
+.card,
+.feature,
+.featureText{
+  overflow: visible !important;
+}
+
+.tooltip{
+  position: relative;
+  z-index: 10;
+}
+
+
+.tooltip{
+  position: relative; 
+  cursor: help;
+  z-index: 10;
+}
+
+.tooltipText{
+  position: absolute;
+  bottom: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 300px;
+
+  background: rgba(18,18,18,.96);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease;
+  z-index: 9999;
+}
+
+.tooltip:hover .tooltipText{
+  opacity: 1;
+  transform: translateX(-50%) translateY(-6px);
+}
+
+/* Small indicator next to tooltip text */
+.tipIcon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  margin-left: 6px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  border: 1px solid rgba(0,0,0,.35);
+  background: rgba(255,255,255,.55);
+  color: rgba(0,0,0,.75);
+  transform: translateY(-1px);
+}
+
+/* Make it feel interactive */
+.tooltip strong{
+  text-decoration: underline dotted rgba(0,0,0,.55);
+  text-underline-offset: 3px;
+}
